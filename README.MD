@@ -23,6 +23,7 @@ make && make install
 cd csft-3.2.14 
 sh buildconf.sh 
 ./configure –prefix=/usr/local/coreseek –without-unixodbc –with-mmseg –with-mmseg-includes=/usr/local/mmseg/include/mmseg/ –with-mmseg-libs=/usr/local/mmseg/lib/ –with-mysql 
+
 make && make install
 
 #### 安装方法网上有很多就不列出了,写出容易发生的错误
@@ -33,7 +34,7 @@ make && make install
 将所有的:
 T val = ExprEval ( this-m_pArg, tMatch );
 交换成
-T val = this-ExprEval ( this-m_pArg, tMatch );
+T val = this->ExprEval ( this-m_pArg, tMatch );
 
 - 修改 configure 文件把 #define USE_LIBICONV 0 最后的数值由1改为0
 
@@ -48,4 +49,4 @@ usr/local/coreseek/bin/searchd -c /usr/local/coreseek/etc/csft.conf
 
 默认端口号9312,windows安装更简单,解压cmd直接运行.
 
-更多详细信息:[查看这篇安装文章]("https://blog.csdn.net/qq_35118483/article/details/78410987")
+更多详细信息:[查看这篇安装文章](https://blog.csdn.net/qq_35118483/article/details/78410987)
