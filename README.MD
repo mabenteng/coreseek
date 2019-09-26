@@ -12,7 +12,7 @@ cd mmseg-3.2.14
  
 ./bootstrap
  
-./configure --prefix=/usr/local/mmseg3
+./configure --prefix=/usr/local/mmseg
  
 make && make install
 警告不用理会
@@ -20,9 +20,15 @@ make && make install
 /usr/local/mmseg/bin/mmseg -d /usr/local/mmseg/etc (测试文档路径)
 
 ## 安装coreseek
-cd csft-3.2.14 
+cd csft-3.2.14
+
+
 sh buildconf.sh 
-./configure –prefix=/usr/local/coreseek –without-unixodbc –with-mmseg –with-mmseg-includes=/usr/local/mmseg/include/mmseg/ –with-mmseg-libs=/usr/local/mmseg/lib/ –with-mysql 
+
+
+
+./configure --prefix=/usr/local/coreseek --with-mmseg=/usr/local/mmseg --with-mmseg-includes=/usr/local/mmseg/include/mmseg/ --with-mmseg-libs=/usr/local/mmseg/lib/ --with-mysql=/phpstudy/mysql
+
 
 make && make install
 
