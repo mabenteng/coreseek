@@ -27,7 +27,7 @@ sh buildconf.sh
 
 
 
-./configure --prefix=/usr/local/coreseek --with-mmseg=/usr/local/mmseg --with-mmseg-includes=/usr/local/mmseg/include/mmseg/ --with-mmseg-libs=/usr/local/mmseg/lib/ --with-mysql=/phpstudy/mysql
+./configure --prefix=/usr/local/coreseek --with-mmseg=/usr/local/mmseg --with-mmseg-includes=/usr/local/mmseg/include/mmseg/ --with-mmseg-libs=/usr/local/mmseg/lib/ --with-mysql=/usr/local/mysql
 
 
 make && make install
@@ -36,13 +36,13 @@ make && make install
 
 - 编译coreseek的./configure加参数中间会报错
 查看error错误行号,
-
+修改 # cd ./src/sphinxexpr.cpp 文件
 将所有的:
 T val = ExprEval ( this-m_pArg, tMatch );
 交换成
 T val = this->ExprEval ( this-m_pArg, tMatch );
 
-- 修改 configure 文件把 #define USE_LIBICONV 0 最后的数值由1改为0
+- 修改 configure 文件把 #define USE_LIBICONV 0 最后的数值由1改为0 在 7422行
 
 解决上面两个错误,基本已经没有问题可以正常运行了
 
