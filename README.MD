@@ -58,11 +58,13 @@ usr/local/coreseek/bin/searchd -c /usr/local/coreseek/etc/csft.conf
 
 ## 添加开机启动,需要把coreseek的searchd加到自启动服务中去
 
-
+```code
 #!/bin/sh
 #chkconfig:2345 80 90
 #description:auto_coreseek
 /usr/local/coreseek/bin/searchd -c /usr/local/coreseek/bin/cs.conf
+
+```
 
 放到/etc/init.d/auto_coreseek.sh
 然后chmod +x /etc/init.d/auto_coreseek.sh
