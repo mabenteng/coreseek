@@ -45,6 +45,15 @@ T val = this->ExprEval ( this-m_pArg, tMatch );
 - 修改 configure 文件把 #define USE_LIBICONV 0 最后的数值由1改为0 在 7422行
 
 解决上面两个错误,基本已经没有问题可以正常运行了
+如果sh buildconf.sh最后没有生成configure脚本，且提示automake: warnings are treated as errors，可以将configure.ac中的这行
+
+AM_INIT_AUTOMAKE([-Wall -Werror foreign])
+
+改为
+
+AM_INIT_AUTOMAKE([-Wall foreign])
+
+即删掉-Werror，然后重新运行sh buildconf.sh。
 
 ## 重建索引:
 /usr/local/coreseek/bin/indexer -c etc/csft.conf –all
